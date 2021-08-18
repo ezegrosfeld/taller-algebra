@@ -93,18 +93,28 @@ multiplo x y = mod x y == 0
 
 {- Funcion que obtiene el digito de las unidades -}
 digitoUnidades :: Int -> Int
-digitoUnidades x
-  | x > 10 = mod x (div x 10 * 10)
-  | x > 0 = x
-  | x < -10 = mod (- x) (div (- x) 10 * 10)
-  | x < 0 = - x
-  | otherwise = 0
+digitoUnidades x = mod x 10
 
 {- Funcion que obtiene el digito de las decenas -}
 digitoDecenas :: Int -> Int
-digitoDecenas x
-  | x > 100 = div (mod x (div x 100 * 100)) 10
-  | x > 10 = div x 10
-  | x < -100 = div (mod (- x) (div (- x) 100 * 100)) 10
-  | x < -10 = - div (- x) 10
-  | otherwise = 0
+digitoDecenas x = mod (div x 10) 10
+
+{- --------------------- -}
+{-  EJERCICIOS DEL ZOOM  -}
+{- --------------------- -}
+
+{- Tengo natacion los lunes y miercoles. Los dıas 29 no voy. Escribir una funcion
+  que dado un numero de dıa de septiembre de este añno me diga si voy a natacion o
+  no. -}
+natacion :: Int -> Bool
+natacion x
+  | x == 29 = False
+  | r == 1 = True
+  | r == 6 = True
+  | otherwise = False
+  where
+    r = mod x 7
+
+{- Definir una funcion que dado dos naturales, x y n devuelva el n-esimo dıgito de x -}
+ndigito :: Int -> Int -> Int
+ndigito x n = div x (10 ^ (n - 1)) `mod` 10 -- ``mod` con `` lo que hace es usar lo que esta a la izquierda como divisor y lo que esta a la derecha como dividendo
