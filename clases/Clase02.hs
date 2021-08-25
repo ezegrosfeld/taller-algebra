@@ -156,3 +156,31 @@ crearPar x y = (x, y)
 -}
 invertir :: (a, b) -> (b, a)
 invertir (x, y) = (y, x)
+
+{- EJERCICIOS CLASES ZOOM -}
+
+{-  1.
+    Escribir una funcion que dados un numero real a y un vector x 2 R2, devuelva el producto por
+    escalar a · x.
+-}
+productoEscalar :: Float -> (Float, Float) -> (Float, Float)
+productoEscalar a x = (a * (fst x), a * (snd x))
+
+{-  2.
+    Escribir una funcion que dados 2 vectores en R3, devuelva el producto vectorial (o producto
+    cruz) entre ellos.
+-}
+productoVectorial :: (Float, Float, Float) -> (Float, Float, Float) -> (Float, Float, Float)
+productoVectorial (x1, y1, z1) (x2, y2, z2) = ((y1 * z2) - (z1 * y2), (- x1 * z2) + (x2 * z1), (x1 * y2) - (y1 * x2))
+
+{-  3.
+    Ana y Beto juegan en equipo a embocar bolitas en un aro, por cada embocada suman 1 punto,
+    ganan si suman entre los dos al menos 20 puntos.
+    Escribir una funcion que dadas las cantidades de bolitas embocadas por cada jugador, devuelva
+    la cantidad total de bolitas embocadas y verdadero en caso de que hayan ganado, y falso en caso
+    contrario.
+-}
+bolitas :: Int -> Int -> (Int, Bool)
+bolitas x y = (s, s >= 20)
+  where
+    s = x + y
