@@ -89,7 +89,9 @@ sumaNormasP v w = normaVectorialP (fst s) (snd s) -- uncurry normaVectorialP s (
 sumaNormasT :: (Float, Float) -> (Float, Float) -> Float
 sumaNormasT v w = normaVectorialT (suma v w) --  CONVIENE USAR TUPLAS EN ESTE CASO
 
-{- EJERCICIOS: -}
+{- --------------------- -}
+{-  EJERCICIOS DEL ZOOM  -}
+{- --------------------- -}
 
 {-  1.
     estanRelacionados es una funcion que dados dos numeros reales, decide si estan
